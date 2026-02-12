@@ -2,7 +2,7 @@
 
 This template provides a minimal, reproducible Python development environment using:
 
-* **Nix flakes** to pin the Python interpreter
+* **devenv** to manage Python and dependencies
 * **direnv** for automatic shell activation
 * **uv** for fast Python dependency management
 
@@ -22,10 +22,11 @@ direnv allow
 Install dependencies (editable install):
 
 ```bash
+install  # shortcut script, or:
 uv pip install -e .
 ```
 
-Run Python commands via the dev shell:
+Run Python commands in the dev shell:
 
 ```bash
 python --version
@@ -33,8 +34,19 @@ python --version
 
 ---
 
+## Customization
+
+Edit `devenv.nix` to:
+* Change Python version
+* Add system packages
+* Configure scripts or environment variables
+
+Edit `pyproject.toml` to add Python dependencies.
+
+---
+
 ## Notes
 
-* System-level dependencies are managed by Nix.
-* Python packages are managed with `uv` inside the virtual environment.
+* System-level dependencies are managed by devenv/Nix.
+* Python packages are managed with `uv`.
 * Add linters, test frameworks, or other tooling only as needed.

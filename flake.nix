@@ -1,5 +1,5 @@
 {
-  description = "Project templates (direnv + Nix flakes + optional Claude Code config)";
+  description = "Project templates (devenv + direnv + optional Claude Code config)";
 
   outputs = { self }:
     {
@@ -7,17 +7,17 @@
       templates = {
         base = {
           path = ./templates/base;
-          description = "Minimal repo with direnv + Claude files (no language/runtime)";
+          description = "Minimal repo with devenv + direnv + Claude files (no language/runtime)";
         };
 
         python = {
           path = ./templates/python;
-          description = "Python starter (flake devShell + direnv + uv + Claude files)";
+          description = "Python starter (devenv + direnv + uv + Claude files)";
         };
 
         node = {
           path = ./templates/node;
-          description = "Node starter (flake devShell + direnv + pnpm + Claude files)";
+          description = "Node starter (devenv + direnv + pnpm + Claude files)";
         };
       };
 

@@ -3,9 +3,9 @@
 This repository contains **minimal project templates** for starting new coding projects
 with **reproducible development environments** using:
 
-* Nix flakes (pinned dependencies)
-* direnv (automatic shell entry)
-* optional Claude Code configuration
+* **devenv** (declarative development environments)
+* **direnv** (automatic shell entry)
+* Optional Claude Code configuration
 
 The goal is to provide a **boring, predictable baseline** that stays out of the way once a
 project is created.
@@ -25,15 +25,24 @@ direnv allow
 
 Available templates:
 
-* `base` – minimal repo with direnv + Claude settings
-* `python` – Python dev shell (python + uv)
-* `node` – Node dev shell (node + pnpm)
+* `base` – minimal repo with devenv + direnv + Claude settings
+* `python` – Python dev shell (devenv + python + uv)
+* `node` – Node dev shell (devenv + node + pnpm)
 
 You can list templates with:
 
 ```bash
 nix flake show github:dlobsinger/dev-templates
 ```
+
+### How it works
+
+Templates are **distributed** via Nix flakes (using `nix flake init`) but **contain**
+devenv configurations. Once initialized:
+
+* Projects use `devenv.nix` and `devenv.yaml` (not `flake.nix`)
+* You interact with devenv and direnv (no flake commands needed)
+* No flakes knowledge required to use the templates
 
 ---
 
@@ -43,7 +52,7 @@ nix flake show github:dlobsinger/dev-templates
   Templates include only the language runtime and essential tooling.
 
 * **Reproducible**
-  Each generated project pins `nixpkgs` via `flake.lock`.
+  devenv ensures consistent environments across machines and over time.
 
 * **Local-first**
   Designed for local development, not container-only workflows.
@@ -65,7 +74,8 @@ Each generated project is expected to evolve independently.
 
 ## Requirements
 
-* Nix with flakes enabled
+* Nix with flakes enabled (for template distribution)
+* devenv installed (see https://devenv.sh/getting-started/)
 * direnv (recommended)
 
 ---

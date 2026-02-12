@@ -1,8 +1,10 @@
 # Project guidelines for Claude
 
 - Work from the repository root.
-- Prefer `nix develop -c <command>` when running tools.
+- This project uses **devenv** for environment management.
+- Run `devenv shell` to enter the development environment.
+- Once in the shell, all tools are available in your PATH.
 - Do not read or print `.env*` files or anything in `secrets/`.
 - Keep changes minimal and scoped to the task.
 
-Assume this project uses Nix for environment reproducibility.
+The development environment is defined in [devenv.nix](devenv.nix).

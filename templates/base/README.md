@@ -2,7 +2,7 @@
 
 This is a minimal starter repository using:
 
-* **Nix flakes** for a reproducible development environment
+* **devenv** for reproducible development environments
 * **direnv** for automatic shell activation
 * **Claude Code configuration** (optional)
 
@@ -19,7 +19,13 @@ After initializing this template:
 direnv allow
 ```
 
-You can add a `flake.nix`, language runtime, or tooling appropriate to the project.
+The devenv shell will activate automatically. Edit `devenv.nix` to add:
+* Language runtimes (Python, Node, etc.)
+* Additional packages
+* Environment variables
+* Scripts and processes
+
+See https://devenv.sh/reference/options/ for all options.
 
 ---
 
@@ -27,3 +33,4 @@ You can add a `flake.nix`, language runtime, or tooling appropriate to the proje
 
 * This template intentionally includes very little.
 * Each project created from this template is expected to evolve independently.
+* Configuration is in `devenv.nix` and `devenv.yaml`
