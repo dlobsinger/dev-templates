@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json.schemastore.org/claude-code-settings.json",
+    "permissions": {
+        "allow": [
+            "Bash(nix develop -c *)",
+            "Bash(node *)",
+            "Bash(pnpm *)",
+            "Bash(npm *)"
+        ],
+        "deny": [
+            "Read(./.env)",
+            "Read(./.env.*)",
+            "Read(./secrets/**)"
+        ]
+    }
+}

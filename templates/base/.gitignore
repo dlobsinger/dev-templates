@@ -1,0 +1,17 @@
+# Nix
+result
+.direnv/
+
+# Environment
+.env
+.env.*
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
