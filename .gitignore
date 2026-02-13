@@ -1,6 +1,7 @@
 # Nix
 result
 .direnv/
+.devenv/
 
 # macOS
 .DS_Store
